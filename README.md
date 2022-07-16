@@ -1,46 +1,13 @@
-# Getting Started with Create React App
+# ⚠️ 注意事项
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. 使用 Mac 的小伙伴请注意
+   如果在使用时`npm run commit` 时出现以下这种错误提示
 
-## Available Scripts
+```
+提示：因为没有将钩子 '.husky/pre-commit' 设置为可执行，钩子被忽略。您可以通过
+提示：配置 `git config advice.ignoredHook false` 来关闭这条警告。
+提示：因为没有将钩子 '.husky/commit-msg' 设置为可执行，钩子被忽略。您可以通过
+提示：配置 `git config advice.ignoredHook false` 来关闭这条警告。
+```
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+以上问题是因为 husky 文件中的脚本没有授权可执行的权限，通过`chmod 777 *`可以命令将 husky 中的文件赋予读、写、执行的权限。
