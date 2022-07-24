@@ -15,16 +15,16 @@ const Login: React.FC = () => {
 			// bodyStyle={}
 			bodyClassName={styles.loginModal}
 			visible={visible}
-			content={<LoginForm />}
+			content={
+				<LoginForm
+					onClosed={() => {
+						setVisible(false);
+					}}
+				/>
+			}
 			onClose={() => {
 				setVisible(false);
 			}}
-			actions={[
-				{
-					key: "confirm",
-					text: "我知道了"
-				}
-			]}
 		/>
 	);
 };

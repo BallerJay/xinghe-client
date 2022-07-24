@@ -8,3 +8,47 @@
 	margin-left: 8px;
 	margin-right: 250px;
 }
+// :global(.adm-tabs-tab-line) {
+// 	width: 50% !important;
+// 	transform: unset !important;
+// }
+
+:global(.adm-tabs-content) {
+	padding: unset;
+	margin-top: 20px;
+
+	:global(.adm-form) {
+		--border-inner: unset;
+		--border-top: unset;
+		--border-bottom: unset;
+		:global(.adm-list-default .adm-list-body) {
+			border-top: unset;
+			border-bottom: unset;
+		}
+		:global(.adm-form-item.adm-form-item-horizontal.adm-list-item) {
+			--prefix-width: 2.2em;
+			background: #f2f2f2;
+			border-radius: 20px;
+		}
+		:global(.adm-list-item-content) {
+			min-height: 80px;
+			align-items: center;
+		}
+	}
+}
+
+.userField {
+	display: inline-block;
+	width: 45px;
+	height: 27px;
+	background: url("../../../assets/common/user.png") center no-repeat;
+	background-size: contain;
+}
+
+.codeField {
+	display: inline-block;
+	width: 45px;
+	height: 27px;
+	background: url("../../../assets/common/pwd.png") center no-repeat;
+	background-size: contain;
+}
