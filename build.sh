@@ -24,8 +24,8 @@ else
 	exit 1
 fi
 
-# git push origin $branch
-# echo -e "\033[32m提交完毕：$branch\033[0m"
+git push origin $branch
+echo -e "\033[32m提交完毕：$branch\033[0m"
 
 
 
