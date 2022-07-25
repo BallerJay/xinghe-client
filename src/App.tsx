@@ -1,8 +1,9 @@
 import React from "react";
-
+import { HashRouter } from "react-router-dom";
 // import { loginApi } from "@/api/modules/user";
 
-import Login from "@/components/Login";
+// import Login from "@/components/Login";
+import Router from "@/router/index";
 
 import "./App.scss";
 
@@ -20,11 +21,14 @@ const App: React.FC = () => {
 	// 	});
 	// }, []);
 	return (
-		<div className="App">
-			<header className="App-header">APP</header>
-			<button>click</button>
-			<Login />
-		</div>
+		// <div className="App">
+		// 	<header className="App-header">APP</header>
+		// 	<button>click</button>
+		// 	<Login />
+		// </div>
+		<HashRouter>
+			<Router />
+		</HashRouter>
 	);
 };
 

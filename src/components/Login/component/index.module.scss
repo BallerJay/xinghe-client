@@ -6,7 +6,7 @@
 	background-position: center;
 	background-size: contain;
 	margin-left: 8px;
-	margin-right: 250px;
+	margin-right: 200px;
 }
 // :global(.adm-tabs-tab-line) {
 // 	width: 50% !important;
@@ -15,12 +15,13 @@
 
 :global(.adm-tabs-content) {
 	padding: unset;
-	margin-top: 20px;
-
 	:global(.adm-form) {
 		--border-inner: unset;
 		--border-top: unset;
 		--border-bottom: unset;
+		:global(.adm-form-item.adm-form-item-horizontal .adm-list-item-content-prefix) {
+			padding-right: unset;
+		}
 		:global(.adm-list-default .adm-list-body) {
 			border-top: unset;
 			border-bottom: unset;
@@ -30,19 +31,24 @@
 			background: #f2f2f2;
 			border-radius: 20px;
 		}
-		:global(.adm-list-item-content) {
-			min-height: 80px;
-			align-items: center;
+		:global(.adm-list-item) {
+			padding-left: unset;
+		}
+		:global(.adm-form-item-label .adm-form-item-required-asterisk) {
+			left: 10px;
 		}
 	}
 }
 
 .userField {
-	display: inline-block;
-	width: 45px;
+	width: 25px;
 	height: 27px;
 	background: url("../../../assets/common/user.png") center no-repeat;
 	background-size: contain;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .codeField {
@@ -51,4 +57,8 @@
 	height: 27px;
 	background: url("../../../assets/common/pwd.png") center no-repeat;
 	background-size: contain;
+	position: absolute;
+	left: 40%;
+	top: 50%;
+	transform: translateY(-50%);
 }

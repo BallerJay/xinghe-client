@@ -1,5 +1,14 @@
+:global(.adm-center-popup-wrap) {
+	min-width: unset;
+	max-width: unset;
+}
+
+:global(.adm-modal-content) {
+	padding: unset;
+}
+
 .loginModal {
-	width: 600px;
-	height: 590px;
+	width: 650px;
+	// height: 660px;
 	border-radius: 50px;
 }
