@@ -1,7 +1,19 @@
 import React from "react";
 
-function index() {
-	return <div>Home</div>;
-}
+import Login from "@/components/Login";
 
-export default index;
+import styles from "./index.module.scss";
+
+import Test from "@/assets/common/test.png";
+
+const Home: React.FC = () => {
+	return (
+		<div className={styles.home}>
+			Home
+			<img src={Test} alt="" />
+			<Login />
+		</div>
+	);
+};
+
+export default Home;

@@ -90,7 +90,7 @@ const LoginForm: React.FC<LoginFormProps> = props => {
 								size="large"
 								shape="rounded"
 								style={{
-									backgroundColor: platform === 1 ? "#8DC120" : "#4065E0",
+									backgroundColor: platform === 1 ? "$anfeng-primary-color" : "#4065E0",
 									color: "#fff",
 									marginTop: "10px"
 								}}
