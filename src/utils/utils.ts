@@ -20,3 +20,7 @@ export const isDing = () => {
 	const list: any = window.navigator.userAgent.toLowerCase().match(/dingtalk/i) || [];
 	return list[0] == "dingtalk";
 };
+
+// 复制文本
+export const copyToClipboard = (text: string) =>
+	navigator.clipboard && navigator.clipboard.writeText && navigator.clipboard.writeText(text);

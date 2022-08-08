@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 import lazyLoad from "@/components/Loadable";
 export default [
@@ -9,8 +9,22 @@ export default [
 	},
 	{
 		path: "/home",
-		element: lazyLoad(React.lazy(() => import("@/pages/Home"))),
-		exact: true
+		// element: (
+		// 	<>
+		// 		<Outlet></Outlet>
+		// 	</>
+		// ),
+		exact: true,
+		children: [
+			{
+				path: "",
+				element: lazyLoad(React.lazy(() => import("@/pages/Home")))
+			},
+			{
+				path: "demo",
+				element: lazyLoad(React.lazy(() => import("@/pages/demo")))
+			}
+		]
 	},
 	{
 		path: "/demo",
