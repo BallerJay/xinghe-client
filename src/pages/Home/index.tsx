@@ -6,7 +6,8 @@ import styles from "./index.module.scss";
 
 import Test from "@/assets/common/test.png";
 
-const Home: React.FC = () => {
+const Home: React.FC = (props: any) => {
+	console.log(props, "aaa");
 	const copyToClipboard = (text: string) =>
 		navigator.clipboard && navigator.clipboard.writeText && navigator.clipboard.writeText(text);
 	return (

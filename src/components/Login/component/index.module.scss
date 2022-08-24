@@ -8,10 +8,10 @@
 	margin-left: 8px;
 	margin-right: 200px;
 }
-// :global(.adm-tabs-tab-line) {
-// 	width: 50% !important;
-// 	transform: unset !important;
-// }
+
+:global(.adm-card-body) {
+	padding-bottom: 5px;
+}
 
 :global(.adm-tabs-content) {
 	padding: unset;
@@ -36,8 +36,18 @@
 		}
 		:global(.adm-form-item-label .adm-form-item-required-asterisk) {
 			left: 10px;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 	}
+}
+
+:global(.adm-form .adm-form-footer) {
+	padding: 30px 12px 12px;
+}
+
+:global(.adm-modal-body:not(.adm-modal-with-image)) {
+	padding-top: 15px;
 }
 
 .userField {
@@ -47,7 +57,7 @@
 	background-size: contain;
 	position: absolute;
 	left: 50%;
-	top: 50%;
+	top: 45%;
 	transform: translateY(-50%);
 }
 
@@ -59,6 +69,10 @@
 	background-size: contain;
 	position: absolute;
 	left: 40%;
-	top: 50%;
+	top: 45%;
 	transform: translateY(-50%);
 }
+
+// .test {
+// 	color: var(--anfeng-primary-color);
+// }

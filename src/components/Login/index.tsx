@@ -11,8 +11,6 @@ const Login: React.FC = () => {
 
 	return (
 		<Modal
-			// style={styles.loginModal}
-			// bodyStyle={}
 			bodyClassName={styles.loginModal}
 			visible={visible}
 			content={

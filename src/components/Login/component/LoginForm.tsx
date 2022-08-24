@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Card, Tabs, Form, Button, Input, List } from "antd-mobile";
+import React, { useEffect, useState } from "react";
+import { Card, Tabs, Form, Button, Input } from "antd-mobile";
 import { CloseOutline } from "antd-mobile-icons";
 
 // 图片资源，这里需要优化代码⚠️
@@ -17,6 +17,16 @@ const LoginForm: React.FC<LoginFormProps> = props => {
 	const { onClosed } = props;
 
 	const [platform, setPlatform] = useState<number | string>(1);
+
+	const updateActiveTabsColor: () => void = () => {
+		const currentTabs = document.getElementsByClassName("adm-tabs")[0] as HTMLElement;
+		currentTabs.style.setProperty("--active-line-color", platform === 1 ? "#8dc120" : "#4065e0");
+		currentTabs.style.setProperty("--active-title-color", platform === 1 ? "#8dc120" : "#4065e0");
+	};
+
+	useEffect(() => {
+		updateActiveTabsColor();
+	}, []);
 
 	return (
 		<Card
@@ -37,7 +47,7 @@ const LoginForm: React.FC<LoginFormProps> = props => {
 				/>
 			}
 		>
-			<Tabs activeLineMode="full">
+			<Tabs activeLineMode="full" onChange={() => updateActiveTabsColor()}>
 				<Tabs.Tab title="短信登录" key="mobile">
 					<Form
 						layout="horizontal"
@@ -49,35 +59,34 @@ const LoginForm: React.FC<LoginFormProps> = props => {
 								shape="rounded"
 								style={{
 									backgroundColor: platform === 1 ? "#8DC120" : "#4065E0",
-									color: "#fff",
-									marginTop: "10px"
+									color: "#fff"
 								}}
 							>
 								立即登陆
 							</Button>
 						}
 					>
-						<List>
-							<List.Item>
-								<Form.Item
-									name="mobile"
-									label={<span className={styles.userField}></span>}
-									rules={[{ required: true, message: "请输入手机号！" }]}
-								>
-									<Input placeholder="请输入手机号" clearable />
-								</Form.Item>
-							</List.Item>
-							<List.Item>
-								<Form.Item
-									name="mobile"
-									label={<span className={styles.codeField}></span>}
-									rules={[{ required: true, message: "请输入验证码！" }]}
-									extra={<a>发送验证码</a>}
-								>
-									<Input placeholder="请输入验证码" clearable />
-								</Form.Item>
-							</List.Item>
-						</List>
+						<Form.Item
+							name="mobile"
+							label={<span className={styles.userField}></span>}
+							rules={[{ required: true, message: "请输入手机号！" }]}
+							style={{ marginTop: "15px" }}
+						>
+							<Input placeholder="请输入手机号" clearable />
+						</Form.Item>
+						<Form.Item
+							name="mobile"
+							label={<span className={styles.codeField}></span>}
+							rules={[{ required: true, message: "请输入验证码！" }]}
+							extra={
+								<a style={{ color: `${platform === 1 ? "var(--anfeng-primary-color)" : "var(--tt-primary-color)"}` }}>
+									发送验证码
+								</a>
+							}
+							style={{ marginTop: "20px" }}
+						>
+							<Input placeholder="请输入验证码" clearable />
+						</Form.Item>
 					</Form>
 				</Tabs.Tab>
 				<Tabs.Tab title="账号登陆" key="account">
@@ -90,35 +99,30 @@ const LoginForm: React.FC<LoginFormProps> = props => {
 								size="large"
 								shape="rounded"
 								style={{
-									backgroundColor: platform === 1 ? "$anfeng-primary-color" : "#4065E0",
-									color: "#fff",
-									marginTop: "10px"
+									backgroundColor: platform === 1 ? "#8DC120" : "#4065E0",
+									color: "#fff"
 								}}
 							>
 								立即登陆
 							</Button>
 						}
 					>
-						<List>
-							<List.Item>
-								<Form.Item
-									name="username"
-									label={<span className={styles.userField}></span>}
-									rules={[{ required: true, message: "请输入账号！" }]}
-								>
-									<Input placeholder="请输入账号" clearable />
-								</Form.Item>
-							</List.Item>
-							<List.Item>
-								<Form.Item
-									name="password"
-									label={<span className={styles.codeField}></span>}
-									rules={[{ required: true, message: "请输入密码！" }]}
-								>
-									<Input placeholder="请输入密码" clearable type="password" />
-								</Form.Item>
-							</List.Item>
-						</List>
+						<Form.Item
+							name="username"
+							label={<span className={styles.userField}></span>}
+							rules={[{ required: true, message: "请输入账号！" }]}
+							style={{ marginTop: "15px" }}
+						>
+							<Input placeholder="请输入账号" clearable />
+						</Form.Item>
+						<Form.Item
+							name="password"
+							label={<span className={styles.codeField}></span>}
+							rules={[{ required: true, message: "请输入密码！" }]}
+							style={{ marginTop: "20px" }}
+						>
+							<Input placeholder="请输入密码" clearable type="password" />
+						</Form.Item>
 					</Form>
 				</Tabs.Tab>
 			</Tabs>
