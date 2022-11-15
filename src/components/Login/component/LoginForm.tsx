@@ -16,7 +16,7 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = props => {
 	const { onClosed } = props;
 
-	const [platform, setPlatform] = useState<number | string>(1);
+	const [platform, setPlatform] = useState<number | string>(7);
 
 	const updateActiveTabsColor: () => void = () => {
 		const currentTabs = document.getElementsByClassName("adm-tabs")[0] as HTMLElement;

@@ -327,6 +327,7 @@ module.exports = function (webpackEnv) {
 					"scheduler/tracing": "scheduler/tracing-profiling"
 				}),
 				"@": paths.appSrc,
+				// "@": path.resolve(__dirname, "src"),
 				...(modules.webpackAliases || {})
 			},
 			plugins: [
@@ -510,7 +511,17 @@ module.exports = function (webpackEnv) {
 									}
 								},
 								"sass-loader"
-							),
+							).concat([
+								{
+									loader: "sass-resources-loader",
+									options: {
+										resources: [
+											path.join(__dirname, "../src/styles/common.scss"),
+											path.join(__dirname, "../src/styles/variable.scss")
+										]
+									}
+								}
+							]),
 							// Don't consider CSS imports dead code even if the
 							// containing package claims to have no side effects.
 							// Remove this when webpack adds a warning or an error for this.
@@ -531,7 +542,17 @@ module.exports = function (webpackEnv) {
 									}
 								},
 								"sass-loader"
-							)
+							).concat([
+								{
+									loader: "sass-resources-loader",
+									options: {
+										resources: [
+											path.join(__dirname, "../src/styles/common.scss"), //全局样式
+											path.join(__dirname, "../src/styles/variable.scss") // 全局变量
+										]
+									}
+								}
+							])
 						},
 						// "file" loader makes sure those assets get served by WebpackDevServer.
 						// When you `import` an asset, you get its (virtual) filename.

@@ -6,7 +6,6 @@ import { HashRouter } from "react-router-dom";
 import Router from "@/router/index";
 
 import "@/styles/reset.scss";
-import "@/styles/common.theme.scss";
 import "@/global.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
